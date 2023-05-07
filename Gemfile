@@ -10,6 +10,8 @@ gem "hanami-validations", "~> 2.0"
 gem "dry-types", "~> 1.0", ">= 1.6.1"
 gem "puma"
 gem "rake"
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+gem 'rss'
 
 group :development, :test do
   gem "dotenv"
