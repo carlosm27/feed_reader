@@ -2,6 +2,6 @@
 
 module FeedReader
   class Routes < Hanami::Routes
-    root { "Hello from Hanami" }
+    root { "Welcome to Feed Reader" }
   end
 end
