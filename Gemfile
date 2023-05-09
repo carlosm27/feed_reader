@@ -12,6 +12,15 @@ gem "puma"
 gem "rake"
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 gem 'rss'
+# Gemfile
+gem "rom", "~> 5.3"
+gem "rom-sql", "~> 3.6"
+gem "pg"
+
+group :test do
+  gem "database_cleaner-sequel"
+end
+
 
 group :development, :test do
   gem "dotenv"
