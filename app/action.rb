@@ -5,5 +5,6 @@ require "hanami/action"
 
 module FeedReader
   class Action < Hanami::Action
+    
   end
 end
