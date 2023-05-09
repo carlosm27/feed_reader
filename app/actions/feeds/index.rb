@@ -7,26 +7,17 @@ module FeedReader
     module Feeds
       class Index < FeedReader::Action
         include Feed
+        include Deps["persistence.rom"]
 
-        
-         
-        
-        
-        def my_feed 
-          feed = Feed.new("https://carlosmv.hashnode.dev/rss.xml")
-          title = feed.get_title
-          entries = feed.get_links
-          
-           [{
-            "author": "Carlos Marcano",
-            "title": title,
-            "entries": entries
-          }]
-          
-        end  
 
         def handle(*, response)
-          feed = my_feed
+          feed = rom.relations[:feeds]
+            .select(:rss)
+            .order(:rss)
+            .to_a
+
+          
+          response.format = :json
           response.body = feed.to_json
         end
       end
