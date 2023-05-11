@@ -6,5 +6,6 @@ module FeedReader
     get "/feeds/:id", to: "feeds.show"
     get "/feeds", to: "feeds.index"
     post "/feeds", to: "feeds.create"
+    get "/feed_entries", to: "feed_entries.index"
   end
 end
