@@ -17,9 +17,9 @@ module FeedReader
                 .to_a
 
               hash = feed[0]
-              puts "#{hash}"
+              
               rss = hash[:rss].to_s
-              puts "#{rss}" 
+               
               entry = Feed.new(rss)
               
               entries = entry.get_links
